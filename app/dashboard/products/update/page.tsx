@@ -2,8 +2,9 @@
 import { trpc } from "@/lib/utils";
 import { useSearchParams } from "next/navigation";
 import AddUpdateProductForm from "../add-update-product";
+import { Suspense } from "react";
 
-export default function UpdateProductPage() {
+function UpdateProductPageContent() {
   const searchParams = useSearchParams();
   const id = Number(searchParams.get("id"));
   const { data, isLoading, error } = trpc.products.getProductById.useQuery({ id });
@@ -22,4 +23,12 @@ export default function UpdateProductPage() {
   };
 
   return <AddUpdateProductForm mode="update" initialValues={initialValues} />;
+}
+
+export default function UpdateProductPage() {
+  return (
+    <Suspense>
+      <UpdateProductPageContent />
+    </Suspense>
+  );
 }
