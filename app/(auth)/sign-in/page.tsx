@@ -40,7 +40,7 @@ export default function SignInPage() {
         <h2 className="text-2xl font-bold mb-6 text-center">Sign In</h2>
         <button
           type="button"
-          className="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition flex items-center justify-center mb-6"
+          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition flex items-center justify-center mb-6"
           onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
         >
           {/* ...icon... */}
@@ -76,7 +76,7 @@ export default function SignInPage() {
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition flex items-center justify-center"
+          className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition flex items-center justify-center"
         >
           Sign In
         </button>
